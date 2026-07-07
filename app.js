@@ -69,6 +69,9 @@ function longestStreak(sortedKeys) {
   return longest;
 }
 
+/**
+ * Computes the consecutive run length for every recorded date.
+ */
 function computeRunLengths(dateKeysSortedAsc) {
   const map = {};
   let prev = null, run = 0;
