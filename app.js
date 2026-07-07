@@ -12,6 +12,9 @@ function pad(n) { return String(n).padStart(2, '0'); }
  * Converts a Date object to a YYYY-MM-DD string key.
  */
 function toKey(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+/**
+ * Parses a YYYY-MM-DD string key into a Date object.
+ */
 function fromKey(k) { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); }
 function addDays(d, n) { const r = new Date(d); r.setDate(r.getDate() + n); return r; }
 function startOfToday() { const d = new Date(); d.setHours(0, 0, 0, 0); return d; }
