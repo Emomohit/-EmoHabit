@@ -133,6 +133,7 @@ function setupEvents() {
 }
 
 // --- Sidebar & Habit Management ---
+// Handles the rendering and selection of habits.
 function renderSidebar() {
   listEl.innerHTML = state.habits.map(h => `
     <div class="habit-item ${h.id === state.activeHabitId ? 'active' : ''}" data-id="${h.id}">
