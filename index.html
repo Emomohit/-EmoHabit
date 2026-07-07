@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmoHabit — The Matrix of Consistency</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect x=%222%22 y=%222%22 width=%2220%22 height=%2220%22 rx=%224%22 fill=%22%2306b6d4%22/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="app-shell">
+    
+    <!-- Sidebar: Habit Selection -->
+    <aside class="sidebar">
+      <header class="brand">
+        <div class="brand-logo"></div>
+        <div>
+          <h1 class="brand-name">EmoHabit</h1>
+          <p class="brand-tag">Matrix of consistency</p>
+        </div>
+      </header>
+
+      <div class="habits-list" id="habitsList">
+        <!-- Habits injected here -->
+      </div>
+
+      <div class="sidebar-foot">
+        <button class="btn btn-primary w-full" id="newHabitBtn">
+          <span>+ Add new habit</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content: Stats & Grid -->
+    <main class="main-content">
+      
+      <header class="topbar">
+        <div class="active-habit-info">
+          <h2 id="activeHabitName" class="active-name">Select a habit</h2>
+          <p id="activeHabitSub" class="active-sub">Start tracking your consistency.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost" id="editHabitBtn" style="display:none;">Edit</button>
+          <button class="btn btn-danger" id="deleteHabitBtn" style="display:none;">Delete</button>
+        </div>
+      </header>
+
+      <div class="dashboard-scroll">
+        <div class="view-container">
+
+          <!-- Stats Row -->
+          <div class="stats-row" id="statsRow" style="display: none;">
+            <div class="stat-card glass">
+              <div class="stat-label">Current Streak</div>
+              <div class="stat-value"><span id="valCurrentStreak" class="mono">0</span> <span class="stat-unit">days</span></div>
+              <div class="stat-meta">Keeping the momentum alive</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-label">Longest Streak</div>
+              <div class="stat-value"><span id="valLongestStreak" class="mono">0</span> <span class="stat-unit">days</span></div>
+              <div class="stat-meta">Your personal best</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-label">Total Completions</div>
+              <div class="stat-value"><span id="valTotalDays" class="mono">0</span> <span class="stat-unit">days</span></div>
+              <div class="stat-meta">All-time commitment</div>
+            </div>
+          </div>
+
+          <!-- Heatmap Signature Element -->
+          <div class="heatmap-panel glass" id="heatmapPanel" style="display: none;">
+            <div class="panel-header">
+              <h3 class="panel-title">Activity Map</h3>
+              <div class="panel-actions">
+                <span class="legend-text">Less</span>
+                <div class="legend-blocks">
+                  <div class="day-block level-0"></div>
+                  <div class="day-block level-1"></div>
+                  <div class="day-block level-2"></div>
+                  <div class="day-block level-3"></div>
+                  <div class="day-block level-4"></div>
+                </div>
+                <span class="legend-text">More</span>
+              </div>
+            </div>
+            
+            <div class="grid-scroll-wrapper">
+              <div class="heatmap-grid-container">
+                <div class="month-labels" id="monthLabels"></div>
+                <div class="grid-body">
+                  <div class="day-labels">
+                    <div>Mon</div>
+                    <div>Wed</div>
+                    <div>Fri</div>
+                  </div>
+                  <div class="day-grid" id="dayGrid">
+                    <!-- Grid rendered via JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div class="empty-state" id="emptyState">
+            <div class="empty-icon">🌱</div>
+            <h3>No habit selected</h3>
+            <p>Create a habit in the sidebar or select an existing one to view your activity map.</p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="habitModal">
+    <div class="modal glass">
+      <h2 class="modal-title" id="modalTitle">New Habit</h2>
+      <div class="form-group">
+        <label>Emoji (Optional)</label>
+        <input type="text" class="input" id="habitEmoji" placeholder="e.g. 💻" maxlength="2">
+      </div>
+      <div class="form-group">
+        <label>Habit Name</label>
+        <input type="text" class="input" id="habitName" placeholder="e.g. Write Code">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="cancelHabitBtn">Cancel</button>
+        <button class="btn btn-primary" id="saveHabitBtn">Save Habit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
