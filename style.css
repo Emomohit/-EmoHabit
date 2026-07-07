@@ -243,6 +243,7 @@ body {
   background: rgba(255, 71, 87, 0.25);
 }
 
+/* ================= STATS SECTION ================= */
 /* --- Stats Row --- */
 .stats-row {
   display: grid;
