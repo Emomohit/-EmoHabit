@@ -147,6 +147,9 @@ function renderSidebar() {
   });
 }
 
+/**
+ * Sets the active habit and updates the dashboard view.
+ */
 function selectHabit(id) {
   state.activeHabitId = id;
   renderSidebar();
