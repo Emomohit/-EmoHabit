@@ -25,6 +25,9 @@ function addDays(d, n) { const r = new Date(d); r.setDate(r.getDate() + n); retu
  */
 function startOfToday() { const d = new Date(); d.setHours(0, 0, 0, 0); return d; }
 
+/**
+ * Generates an array of Date objects for the 370-day heatmap grid.
+ */
 function buildGridDates() {
   const today = startOfToday();
   let start = addDays(today, -370);
