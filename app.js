@@ -94,6 +94,9 @@ let state = {
 };
 // habit shape: { id: string, name: string, emoji: string, dates: string[] }
 
+/**
+ * Persists the application state to localStorage.
+ */
 function saveState() {
   localStorage.setItem('emohabit_habits', JSON.stringify(state.habits));
 }
