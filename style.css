@@ -143,6 +143,7 @@ body {
   border-top: 1px solid var(--panel-border);
 }
 
+/* ================= MAIN CONTENT AREA ================= */
 /* --- Main Content --- */
 .main-content {
   flex: 1;
