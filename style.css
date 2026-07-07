@@ -110,6 +110,7 @@ body {
   gap: 4px;
 }
 
+/* --- Custom Scrollbar Styles --- */
 /* Scrollbars */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
