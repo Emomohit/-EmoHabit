@@ -55,6 +55,9 @@ function currentStreak(dateSet) {
   return streak;
 }
 
+/**
+ * Calculates the longest historical streak from an array of sorted date keys.
+ */
 function longestStreak(sortedKeys) {
   if (!sortedKeys.length) return 0;
   let longest = 1, run = 1;
