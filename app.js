@@ -8,6 +8,9 @@
  * Pads a number with leading zeros.
  */
 function pad(n) { return String(n).padStart(2, '0'); }
+/**
+ * Converts a Date object to a YYYY-MM-DD string key.
+ */
 function toKey(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
 function fromKey(k) { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); }
 function addDays(d, n) { const r = new Date(d); r.setDate(r.getDate() + n); return r; }
