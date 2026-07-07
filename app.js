@@ -41,6 +41,9 @@ function buildGridDates() {
   return dates;
 }
 
+/**
+ * Calculates the current active streak based on a set of date keys.
+ */
 function currentStreak(dateSet) {
   let cursor = startOfToday();
   if (!dateSet.has(toKey(cursor))) cursor = addDays(cursor, -1);
