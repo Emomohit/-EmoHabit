@@ -166,6 +166,9 @@ function deleteActiveHabit() {
   else showEmptyState();
 }
 
+/**
+ * Displays the empty state UI when no habit is selected.
+ */
 function showEmptyState() {
   emptyState.style.display = 'flex';
   statsRow.style.display = 'none';
