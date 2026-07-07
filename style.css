@@ -397,6 +397,7 @@ body {
   opacity: 1;
 }
 
+/* ================= EMPTY STATE ================= */
 /* --- Empty State --- */
 .empty-state {
   display: flex;
