@@ -16,6 +16,9 @@ function toKey(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.
  * Parses a YYYY-MM-DD string key into a Date object.
  */
 function fromKey(k) { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); }
+/**
+ * Adds a specified number of days to a given date.
+ */
 function addDays(d, n) { const r = new Date(d); r.setDate(r.getDate() + n); return r; }
 function startOfToday() { const d = new Date(); d.setHours(0, 0, 0, 0); return d; }
 
